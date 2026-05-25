@@ -1,0 +1,36 @@
+<header class="site-header" id="inicio">
+  <nav class="nav container" aria-label="Principal">
+    <a class="nav__brand" href="#inicio" (click)="closeMenu()">
+      <img
+        class="nav__logo"
+        src="/assets/images/logo-react-angular.svg"
+        width="36"
+        height="36"
+        alt="Logo React y Angular"
+      />
+      <span class="nav__name">Alvaro <strong>Araújo</strong></span>
+    </a>
+
+    <button
+      type="button"
+      class="nav__toggle"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="nav-menu"
+      aria-label="Abrir menú"
+      (click)="toggleMenu()"
+    >
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav__menu" id="nav-menu" [class.is-open]="menuOpen()">
+      @for (link of navLinks; track link.fragment) {
+        <li>
+          <a [href]="'#' + link.fragment" (click)="closeMenu()">{{ link.label }}</a>
+        </li>
+      }
+      <li>
+        <a class="nav__cta" [href]="cvPath" download (click)="closeMenu()">Descargar CV</a>
+      </li>
+    </ul>
+  </nav>
+</header>

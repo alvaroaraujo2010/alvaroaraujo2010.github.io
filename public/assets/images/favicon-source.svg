@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Favicon React y Angular">
+  <g transform="translate(256 256)" fill="none" stroke="#61dafb" stroke-width="18" stroke-linecap="round">
+    <ellipse rx="168" ry="60"/>
+    <ellipse rx="168" ry="60" transform="rotate(60)"/>
+    <ellipse rx="168" ry="60" transform="rotate(120)"/>
+    <circle r="26" fill="#61dafb" stroke="none"/>
+  </g>
+  <g transform="translate(256 272)">
+    <path fill="#dd0031" stroke="#ffffff" stroke-width="10" d="M0,-112 L96.8,-36.8 L96.8,75.2 L0,150.4 L-96.8,75.2 L-96.8,-36.8 Z"/>
+    <text y="48" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="120" font-weight="700">A</text>
+  </g>
+</svg>

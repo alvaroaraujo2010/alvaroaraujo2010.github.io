@@ -1,0 +1,156 @@
+:root {
+  --navy-950: #0a1628;
+  --navy-900: #0f2137;
+  --navy-800: #152a45;
+  --teal-500: #1e8a83;
+  --teal-400: #2aa89f;
+  --teal-300: #5ec4bc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-500: #64748b;
+  --slate-700: #334155;
+  --white: #ffffff;
+  --shadow: 0 20px 50px rgba(10, 22, 40, 0.12);
+  --radius: 14px;
+  --radius-lg: 20px;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-display: 'Outfit', system-ui, sans-serif;
+  --header-h: 72px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--slate-700);
+  background: var(--slate-100);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--teal-500);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--teal-400);
+}
+
+.container {
+  width: min(1120px, calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 9999;
+  padding: 0.75rem 1rem;
+  background: var(--teal-500);
+  color: var(--white);
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.35rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition:
+    transform 0.15s,
+    background 0.2s,
+    border-color 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn--primary {
+  background: var(--teal-500);
+  color: var(--white);
+}
+
+.btn--primary:hover {
+  background: var(--teal-400);
+  color: var(--white);
+}
+
+.btn--ghost {
+  border-color: rgba(255, 255, 255, 0.35);
+  color: var(--white);
+}
+
+.btn--ghost:hover {
+  border-color: var(--teal-300);
+  color: var(--teal-300);
+}
+
+.btn--on-dark {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.section {
+  padding: 4.5rem 0;
+}
+
+.section--alt {
+  background: var(--white);
+}
+
+.section--dark {
+  background: var(--navy-900);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.section--dark h2 {
+  color: var(--white);
+}
+
+.section__eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal-500);
+  margin: 0 0 0.5rem;
+}
+
+.section__eyebrow--light {
+  color: var(--teal-300);
+}
+
+.section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.35rem);
+  color: var(--navy-900);
+  margin: 0 0 1.5rem;
+  line-height: 1.2;
+}

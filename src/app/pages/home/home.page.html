@@ -1,0 +1,197 @@
+<a class="skip-link" href="#contenido">Ir al contenido</a>
+
+<app-site-header />
+
+<main id="contenido">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="container hero__grid">
+      <figure class="hero__visual">
+        <img
+          [src]="images.banner"
+          [srcset]="images.bannerSrcset"
+          sizes="(min-width: 1120px) 1120px, 100vw"
+          alt="Alvaro Araújo — Ingeniero de Sistemas, más de 13 años en software, web, TIC, IA y consultoría. Medellín, Colombia."
+          width="1584"
+          height="396"
+          decoding="async"
+          fetchpriority="high"
+        />
+      </figure>
+      <div class="hero__copy">
+        <p class="hero__eyebrow">{{ profile.title }}</p>
+        <h1 id="hero-title" class="hero__title">
+          Tecnología <em>que funciona</em>
+        </h1>
+        <p class="hero__lead">{{ profile.heroLead }}</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" [href]="profile.cvPath" download>Descargar CV (PDF)</a>
+          <a class="btn btn--ghost" href="#contacto">Contactar</a>
+        </div>
+        <ul class="hero__meta">
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+            {{ profile.location }} · presencial y remoto
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.25 1.01l-2.2 2.22z"/></svg>
+            <a [href]="profile.phoneHref">{{ profile.phone }}</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <a [href]="'mailto:' + profile.email">{{ profile.email }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="hero__stack container" aria-label="Stack tecnológico">
+      @for (tech of techStack; track tech) {
+        <span>{{ tech }}</span>
+      }
+    </div>
+  </section>
+
+  <section class="stats container" aria-label="Métricas destacadas">
+    @for (stat of stats; track stat.label) {
+      <article class="stat">
+        <strong>{{ stat.value }}</strong>
+        <span>{{ stat.label }}</span>
+      </article>
+    }
+  </section>
+
+  <section class="section" id="perfil">
+    <div class="container section__grid">
+      <div class="section__header">
+        <p class="section__eyebrow">Perfil profesional</p>
+        <h2>Ingeniería de software con visión de arquitectura e IA</h2>
+      </div>
+      <div class="section__body prose">
+        @for (paragraph of profile.profileParagraphs; track $index) {
+          <p>{{ paragraph }}</p>
+        }
+      </div>
+    </div>
+
+    <div class="container skills" aria-labelledby="skills-title">
+      <h3 id="skills-title" class="skills__title">Competencias técnicas</h3>
+      <div class="skills__grid">
+        @for (skill of skills; track skill.title) {
+          <div class="skill-card">
+            <h4>{{ skill.title }}</h4>
+            <p>{{ skill.items }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="experiencia">
+    <div class="container">
+      <p class="section__eyebrow">Experiencia reciente</p>
+      <h2>Trayectoria en sectores salud, seguros, educación y fintech</h2>
+
+      <ol class="timeline">
+        @for (job of experience; track job.role) {
+          <li class="timeline__item" [class.timeline__item--current]="job.current">
+            <time [attr.datetime]="job.datetime">{{ job.period }}</time>
+            <h3>{{ job.role }}</h3>
+            <p>{{ job.description }}</p>
+          </li>
+        }
+      </ol>
+
+      <p class="timeline__note">
+        Experiencia adicional en Siesa, Aplicando/Asiste, Gran Colombia Gold, Homini (BIOFIRMA), Cognox, Intergrupo (EPM) e IPUC.
+        <a [href]="profile.cvPath" download>Ver historial completo en el CV</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="servicios">
+    <div class="container servicios">
+      <div class="servicios__copy">
+        <p class="section__eyebrow">Servicios</p>
+        <h2>Soluciones tecnológicas integrales</h2>
+        <p class="servicios__intro">
+          Desarrollo, soporte, web, formación TIC, IA aplicada y consultoría — de los requisitos a la entrega,
+          con metodología y foco en resultados.
+        </p>
+      </div>
+      <figure class="servicios__visual">
+        <img
+          [src]="images.services"
+          alt="Mis servicios: software a la medida, soporte, páginas web, infraestructura, formación TIC, IA aplicada y consultoría"
+          width="518"
+          height="500"
+          loading="lazy"
+        />
+      </figure>
+    </div>
+  </section>
+
+  <section class="section section--dark" id="productos">
+    <div class="container">
+      <p class="section__eyebrow section__eyebrow--light">Productos</p>
+      <h2>Proyectos y soluciones propias</h2>
+      <div class="products">
+        <article class="product-card">
+          <img [src]="images.zentry" alt="Zentry — producto" width="512" height="410" loading="lazy" />
+        </article>
+        <article class="product-card">
+          <img [src]="images.sispark" alt="Sispark — producto" width="512" height="410" loading="lazy" />
+        </article>
+        <article class="product-card">
+          <img [src]="images.legalApp" alt="Legal Web App — producto" width="512" height="410" loading="lazy" />
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container edu">
+      <div>
+        <p class="section__eyebrow">Formación & certificaciones</p>
+        <h2>Base académica sólida</h2>
+        <ul class="edu__list">
+          @for (item of education; track item.degree) {
+            <li><strong>{{ item.degree }}</strong> — {{ item.school }}</li>
+          }
+        </ul>
+      </div>
+      <div>
+        <h3 class="edu__certs-title">Certificaciones</h3>
+        <ul class="tags">
+          @for (cert of certifications; track cert) {
+            <li>{{ cert }}</li>
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="contacto">
+    <div class="container cta-band__inner">
+      <div class="cta-band__copy">
+        <h2>¿Hablamos de tu próximo proyecto?</h2>
+        <p>Disponible para consultoría, desarrollo a medida, soporte evolutivo y proyectos con IA aplicada.</p>
+        <div class="cta-band__actions">
+          <a class="btn btn--primary" [href]="profile.whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a class="btn btn--ghost btn--on-dark" [href]="profile.linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="btn btn--ghost btn--on-dark" [href]="'mailto:' + profile.email">Email</a>
+        </div>
+      </div>
+      <figure class="cta-band__visual">
+        <img
+          [src]="images.footer"
+          alt="Beneficios: experiencia comprobada, enfoque en resultados, comunicación clara, soporte post-entrega"
+          width="1536"
+          height="112"
+          loading="lazy"
+        />
+      </figure>
+    </div>
+  </section>
+</main>
+
+<app-site-footer [year]="year" [cvPath]="profile.cvPath" />
