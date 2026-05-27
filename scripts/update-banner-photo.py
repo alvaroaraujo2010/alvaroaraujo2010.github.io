@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Banner kit + foto HD, sin borde blanco, sello sobre el eslogan."""
+"""Banner kit + foto HD (legado). Usar build-banner.py para fondo sin rayas."""
 from __future__ import annotations
 
 from pathlib import Path
