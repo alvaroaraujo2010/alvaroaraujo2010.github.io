@@ -148,6 +148,37 @@
     </div>
   </section>
 
+  <section class="section success" id="casos">
+    <div class="container">
+      <div class="success__header">
+        <div>
+          <p class="section__eyebrow">Casos de éxito</p>
+          <h2>Proyectos web publicados y en operación</h2>
+        </div>
+        <p>
+          Sitios reales desarrollados para negocios con necesidades distintas: presencia corporativa,
+          comunicación comercial y venta digital.
+        </p>
+      </div>
+
+      <div class="success__grid">
+        @for (caseItem of successCases; track caseItem.name) {
+          <article class="success-card">
+            <a class="success-card__image" [href]="caseItem.url" target="_blank" rel="noopener noreferrer">
+              <img [src]="caseItem.image" [alt]="caseItem.alt" width="1000" height="625" loading="lazy" />
+            </a>
+            <div class="success-card__body">
+              <p>{{ caseItem.category }}</p>
+              <h3>{{ caseItem.name }}</h3>
+              <span>{{ caseItem.description }}</span>
+              <a [href]="caseItem.url" target="_blank" rel="noopener noreferrer">Ver sitio</a>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
   <section class="section section--alt">
     <div class="container edu">
       <div>

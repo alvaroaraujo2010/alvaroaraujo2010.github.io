@@ -9,6 +9,7 @@ import {
   PROFILE,
   SKILLS,
   STATS,
+  SUCCESS_CASES,
   TECH_STACK,
 } from '../../core/data/portfolio.data';
 
@@ -25,6 +26,7 @@ export class HomePage {
   readonly techStack = TECH_STACK;
   readonly skills = SKILLS;
   readonly experience = EXPERIENCE;
+  readonly successCases = SUCCESS_CASES;
   readonly education = EDUCATION;
   readonly certifications = CERTIFICATIONS;
   readonly images = IMAGES;

@@ -85,6 +85,27 @@ export const EXPERIENCE = [
   },
 ];
 
+export const SUCCESS_CASES = [
+  {
+    name: 'AG Litigios',
+    category: 'Sitio corporativo legal',
+    description:
+      'Presencia web profesional para firma de abogados, con enfoque en servicios jurídicos, agenda de citas y comunicación clara para clientes.',
+    url: 'https://aglitigios.com/',
+    image: '/assets/images/caso-exito-aglitigios.png',
+    alt: 'Página principal de AG Litigios, firma de abogados en Medellín',
+  },
+  {
+    name: 'Jhon Calcas',
+    category: 'Ecommerce Shopify',
+    description:
+      'Tienda online para calcomanías y accesorios de motocicletas, orientada a catálogo, ventas digitales y posicionamiento comercial.',
+    url: 'https://jhoncalcas.com/',
+    image: '/assets/images/caso-exito-jhoncalcas.png',
+    alt: 'Página principal de Jhon Calcas, tienda online de calcomanías para motos',
+  },
+];
+
 export const EDUCATION = [
   { degree: 'Especialización en Ingeniería Web', school: 'Universidad Simón Bolívar' },
   { degree: 'Ingeniería de Sistemas', school: 'Universidad Simón Bolívar' },
@@ -116,5 +137,6 @@ export const NAV_LINKS = [
   { label: 'Experiencia', fragment: 'experiencia' },
   { label: 'Servicios', fragment: 'servicios' },
   { label: 'Productos', fragment: 'productos' },
+  { label: 'Proyectos', fragment: 'casos' },
   { label: 'Contacto', fragment: 'contacto' },
 ];
