@@ -32,7 +32,13 @@ Salida: `dist/sitio-personal/browser`
 3. **Build command:** `npm run build`
 4. **Publish directory:** `dist/sitio-personal/browser`
 
-El archivo `netlify.toml` ya define build, publicación y redirección SPA.
+El archivo `netlify.toml` define build, publicación, redirección SPA y **301** desde el dominio antiguo `alvaroaraujoarrieta.tech` hacia `https://alvaro-araujo.netlify.app/`.
+
+### Dominio antiguo → sitio personal
+
+1. En Netlify: **Domain management** → añade `alvaroaraujoarrieta.tech` y `www.alvaroaraujoarrieta.tech` a este mismo sitio.
+2. En tu registrador de dominio: apunta el DNS a Netlify (registros A/CNAME que indique el panel).
+3. Haz deploy; al visitar el dominio viejo, Netlify redirige al sitio personal.
 
 ## Favicon
 

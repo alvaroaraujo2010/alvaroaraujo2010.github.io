@@ -2,6 +2,15 @@
   command = "npm run build"
   publish = "dist/sitio-personal/browser"
 
+# Dominio antiguo → sitio personal actual (301 permanente, conserva la ruta)
+[[redirects]]
+  from = "/*"
+  to = "https://alvaro-araujo.netlify.app/:splat"
+  status = 301
+  force = true
+  conditions = { Host = ["alvaroaraujoarrieta.tech", "www.alvaroaraujoarrieta.tech"] }
+
+# SPA Angular: rutas internas del sitio personal
 [[redirects]]
   from = "/*"
   to = "/index.html"
