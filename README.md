@@ -32,13 +32,19 @@ Salida: `dist/sitio-personal/browser`
 3. **Build command:** `npm run build`
 4. **Publish directory:** `dist/sitio-personal/browser`
 
-El archivo `netlify.toml` define build, publicación, redirección SPA y **301** desde el dominio antiguo `alvaroaraujoarrieta.tech` hacia `https://alvaro-araujo.netlify.app/`.
+El archivo `netlify.toml` y `public/_redirects` definen la redirección **301** desde `alvaroaraujoarrieta.tech` hacia `https://alvaro-araujo.netlify.app/`.
 
-### Dominio antiguo → sitio personal
+### Dominio antiguo → sitio personal (obligatorio en Netlify + DNS)
 
-1. En Netlify: **Domain management** → añade `alvaroaraujoarrieta.tech` y `www.alvaroaraujoarrieta.tech` a este mismo sitio.
-2. En tu registrador de dominio: apunta el DNS a Netlify (registros A/CNAME que indique el panel).
-3. Haz deploy; al visitar el dominio viejo, Netlify redirige al sitio personal.
+1. **Registra o renueva** el dominio `alvaroaraujoarrieta.tech` en tu proveedor (si expiró, no resolverá en internet).
+2. En Netlify → **Domain management** → **Add a domain** → añade `alvaroaraujoarrieta.tech` y `www.alvaroaraujoarrieta.tech` al sitio `alvaro-araujo`.
+3. En tu registrador, configura el DNS que indique Netlify:
+   - Apex (`@`): registro **A** → `75.2.60.5`
+   - `www`: registro **CNAME** → `alvaro-araujo.netlify.app`
+4. Espera propagación DNS (5 min – 48 h) y haz deploy del proyecto.
+5. Prueba: `https://alvaroaraujoarrieta.tech` debe ir a `https://alvaro-araujo.netlify.app/`.
+
+> Solo el `netlify.toml` no basta: el dominio debe existir, apuntar a Netlify y estar añadido al sitio.
 
 ## Favicon
 

@@ -1,0 +1,8 @@
+# Dominio antiguo → sitio personal (301 permanente)
+https://alvaroaraujoarrieta.tech/*       https://alvaro-araujo.netlify.app/:splat  301!
+http://alvaroaraujoarrieta.tech/*        https://alvaro-araujo.netlify.app/:splat  301!
+https://www.alvaroaraujoarrieta.tech/*   https://alvaro-araujo.netlify.app/:splat  301!
+http://www.alvaroaraujoarrieta.tech/*    https://alvaro-araujo.netlify.app/:splat  301!
+
+# SPA Angular
+/*    /index.html    200
